@@ -1,25 +1,62 @@
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+import {Routes,Route,BrowserRouter as Router,Navigate,} from "react-router-dom";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import { Etusivu } from "./etusivu";
+import { Elaimet } from './elaimet';
+import { Historia } from './historia';
+import { Sijainti } from './sijainti';
+import image from "./Weja_tausta.png";
+
+
+
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router>
+          <Navbar bg="light" expand="lg">
+              <Container>
+                  <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                  <Navbar.Brand href="/">Jokulan maatilamatkailu</Navbar.Brand>
+                  <Navbar.Collapse dir="column" className="mx-1">
+                      <Nav className="me-auto">
+                          <Nav.Link href="/">Etusivu</Nav.Link>
+                          <Nav.Link href="/historia">Tilan historia</Nav.Link>
+                          <Nav.Link href="/elaimet">Eläimet</Nav.Link>
+                          <Nav.Link href="/sijainti">Sijainti</Nav.Link>
+                      </Nav>
+                  </Navbar.Collapse>
+              </Container>
+          </Navbar>
+
+          <div
+              style={{
+                  backgroundImage: `url(${image})`,
+                  minHeight: "100vh",
+                  backgroundRepeat: "repeat",
+                  backgroundSize: "contain",
+              }}
+          >
+              <div style={{ textAlign: "center" }}>
+                  <Routes>
+                      <Route path="/" element={<Etusivu />} />
+                      <Route path="/historia" element={<Historia />}/>
+                      <Route path='/elaimet' element={<Elaimet/>}/>
+                      <Route path='/sijainti' element={<Sijainti/>}/>
+                      <Route path="*" element={<Navigate to="/" />} />
+                  </Routes>
+              </div>
+          </div>
+
+          <Navbar bg="light" expand="lg">
+              <Container>
+                  <Navbar.Brand href="/"></Navbar.Brand>
+              </Container>
+          </Navbar>
+      </Router>
   );
-}
+};
 
 export default App;
