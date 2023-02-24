@@ -57,11 +57,11 @@ const App = () => {
                   <table style={{width:'100%', textAlign:'center'}}>
                     <tbody>
                         <tr>
-                            <td>Jokulantie 10</td>
+                            <td>Honkalahdetie 320</td>
                             <td>jokula@sposti.fi</td>
                         </tr>
                         <tr>
-                            <td>90100 Jokula</td>
+                            <td>73600 Kaavi</td>
                             <td>+358 123 4567</td>
                         </tr>
                     </tbody>
