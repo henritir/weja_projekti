@@ -8,26 +8,36 @@ const Etusivu = () => {
         <div>
             <Container fluid>
                 <Row>
-                    <Col xs={12} md={8} style={{
+                    <Col  md={8} style={{
                         backgroundImage: `url(${image})`,
-                        minHeight:'40vh',
+                        minHeight:'45vh',
                         backgroundSize: "100%",
                         backgroundRepeat: "no-repeat"
                         
                     }}>
                         <h1>Etusivu</h1>
                     </Col>
-                    <Col style={{color:'white', textAlign:'left', paddingLeft:'3%', paddingTop:'1%', minHeight:'100vh'}} xs={6} md={4}>
+                    <Col  md={4} style={{textAlign:'left', marginTop:'3%', minHeight:'85vh'}}>
                         
-                        Tervetuloa jokulan maatilalle.
-                        <br/>
-                        Olemme avoinna kesällä 2023
-                        <br/>
-                        toukokuusta elokuun loppuun.
-                        <br/>
-                        <br/>
-                        <h3>Aukioloajat</h3>
-                        <table>
+                        <table className='App-keskitys'>
+                            <tbody>
+                                <tr>
+                                    <td>Tervetuloa Jokulan maatilalle.</td>
+                                </tr>
+                                <tr>
+                                    <td>Olemme avoinna kesällä 2023</td>
+                                </tr>
+                                <tr>
+                                    <td>toukokuusta elokuun loppuun.</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                      
+                        <h3 style={{textAlign:'center'}}>Aukioloajat</h3>
+                        <table  style={{marginLeft:'auto', marginRight:'auto'}}>
                             <tbody>
                                 <tr>
                                     <td>Ma-Pe</td>
@@ -41,8 +51,8 @@ const Etusivu = () => {
                         </table>
                         <br/>
 
-                        <h3>Hinnasto</h3>
-                        <table>
+                        <h3 style={{textAlign:'center'}}>Hinnasto</h3>
+                        <table className='App-keskitys'>
                             <tbody>
                                 <tr>
                                     <td>Aikuinen</td>

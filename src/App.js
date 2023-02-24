@@ -16,7 +16,7 @@ const App = () => {
 
   return (
       <Router>
-          <Navbar bg="light" expand="lg">
+          <Navbar bg="light" expand="lg" sticky='top'>
               <Container>
                   <Navbar.Toggle aria-controls="basic-navbar-nav" />
                   <Navbar.Brand href="/">Jokulan maatilamatkailu</Navbar.Brand>
@@ -30,16 +30,17 @@ const App = () => {
                   </Navbar.Collapse>
               </Container>
           </Navbar>
-
+            
           <div
               style={{
                   backgroundImage: `url(${image})`,
-                  minHeight: "100vh",
+                  minHeight: "95vh",
                   backgroundRepeat: "repeat",
                   backgroundSize: "contain",
+                  
               }}
           >
-              <div style={{ textAlign: "center" }}>
+              <div style={{ textAlign: "center", background:'rgba(0,0,0,0.5)',minHeight:'95vh', color:'white' }}>
                   <Routes>
                       <Route path="/" element={<Etusivu />} />
                       <Route path="/historia" element={<Historia />}/>
@@ -49,10 +50,22 @@ const App = () => {
                   </Routes>
               </div>
           </div>
+         
 
           <Navbar bg="light" expand="lg">
-              <Container>
-                  <Navbar.Brand href="/"></Navbar.Brand>
+              <Container fluid>
+                  <table style={{width:'100%', textAlign:'center'}}>
+                    <tbody>
+                        <tr>
+                            <td>Jokulantie 10</td>
+                            <td>jokula@sposti.fi</td>
+                        </tr>
+                        <tr>
+                            <td>90100 Jokula</td>
+                            <td>+358 123 4567</td>
+                        </tr>
+                    </tbody>
+                  </table>
               </Container>
           </Navbar>
       </Router>
