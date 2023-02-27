@@ -9,6 +9,7 @@ import { Elaimet } from './elaimet';
 import { Historia } from './historia';
 import { Sijainti } from './sijainti';
 import image from "./Weja_tausta.png";
+import painike from './painike_kuva.png';
 
 
 
@@ -16,13 +17,13 @@ const App = () => {
 
   return (
       <Router>
-          <Navbar bg="light" expand="lg" sticky='top'>
+          <Navbar bg="dark" expand="lg" sticky='top' variant='dark'>
               <Container>
                   <Navbar.Toggle aria-controls="basic-navbar-nav" />
                   <Navbar.Brand href="/">Jokulan maatilamatkailu</Navbar.Brand>
                   <Navbar.Collapse dir="column" className="mx-1">
-                      <Nav className="me-auto">
-                          <Nav.Link href="/">Etusivu</Nav.Link>
+                      <Nav className="me-auto" >
+                          <Nav.Link href="/" >Etusivu</Nav.Link>
                           <Nav.Link href="/historia">Tilan historia</Nav.Link>
                           <Nav.Link href="/elaimet">Eläimet</Nav.Link>
                           <Nav.Link href="/sijainti">Sijainti</Nav.Link>
@@ -34,13 +35,13 @@ const App = () => {
           <div
               style={{
                   backgroundImage: `url(${image})`,
-                  minHeight: "95vh",
+                  minHeight: "90vh",
                   backgroundRepeat: "repeat",
                   backgroundSize: "contain",
                   
               }}
           >
-              <div style={{ textAlign: "center", background:'rgba(0,0,0,0.5)',minHeight:'95vh', color:'white' }}>
+              <div style={{ textAlign: "center", background:'rgba(0,0,0,0.5)',minHeight:'90vh', color:'white' }}>
                   <Routes>
                       <Route path="/" element={<Etusivu />} />
                       <Route path="/historia" element={<Historia />}/>
@@ -52,16 +53,16 @@ const App = () => {
           </div>
          
 
-          <Navbar bg="light" expand="lg">
+          <Navbar bg="dark" expand="lg">
               <Container fluid>
-                  <table style={{width:'100%', textAlign:'center'}}>
+                  <table style={{width:'100%', textAlign:'center', color:'white'}}>
                     <tbody>
                         <tr>
                             <td>Honkalahdetie 320</td>
                             <td>jokula@sposti.fi</td>
                         </tr>
                         <tr>
-                            <td>73600 Kaavi</td>
+                            <td><Nav.Link href="/sijainti">73600 Kaavi <img src={painike} alt='Sijainti' style={{height:'4vh'}}></img></Nav.Link></td>
                             <td>+358 123 4567</td>
                         </tr>
                     </tbody>

@@ -7,6 +7,10 @@ const Elaimet= () =>{
     return(
         <div>
             <Container fluid >
+                <Row>
+                    <Col><h2>Eläimet</h2></Col>
+                    <Col></Col>
+                </Row>
                 <Row className='p-3'>
                     <Col md={6}>
                         <img src={hepat} style={{width:'100%'}} alt="description"></img>
